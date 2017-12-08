@@ -1,0 +1,24 @@
+Bird's eye view of the rules of thumb covered today looking for procedural anti-patterns in Object Oriented programming
+
+1. 3 types of Classes - Boundary, Entity and Control - Always remember which of these are you designing.
+
+2.No need to code elaborate data input mechanisms. Just create data in the main itself.
+
+3. AAA of Code-Test = Arrange, Act, Assert.
+
+4.Do not code specific data in the Domain Model (wrt Domain Model created in Assignment 01). Do not put specific Movie names in Domain Model
+
+5.Use requirements spec leads to Conceptual Model. Conceptual Model crystallizes into Design/Implementation Model. Conceptual Model itself provides hints on how to implement certain entities (i.e. implementation model). Use Association Classes during conceptual modeling (Apply this to the assignment)
+
+6. If you are passing around too many char pointers/references, or passing too many arguments to a function, then it is a symptom that you should perhaps abstract them into a Class and pass Object reference
+
+7. Use Immutable objects as much as possible especially in the Domain Model. Add setters if absolutely essentials. Provider non trivial behavioral methods to mutate the internal state than fine grained setters
+
+8. Sure shot pattern to discover the need of inheritance. - switch/case or if/else based on the equality check for a particular class attribute, then perhaps that class needs inheritance and all of switch case needs to become polymorphic functions
+
+9. Exception to above rule is Factory pattern - whose only purpose is to create appropriate subclasses for a given type. This can be done as a stand alone class with a static function. Or it can be static function on the abstract parent class. (The latter is sometimes not preferred by OO purists because it introduces implicit knowledge of child classes into the parent class)
+
+9. Passing Typesafe arguments instead of int/string to decide. This gives less room for error in internal behavior
+
+10. Introduction to Template Method Pattern. When to use it? What are the symptoms when a Template Method can be extracted from a implementation?
+
